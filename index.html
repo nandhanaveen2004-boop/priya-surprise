@@ -15,7 +15,6 @@ font-family:Arial,sans-serif;
 
 body{
 height:100vh;
-overflow:hidden;
 background:linear-gradient(135deg,#ff9fc7,#ffd8ea);
 display:flex;
 justify-content:center;
@@ -23,7 +22,7 @@ align-items:center;
 }
 
 .page{
-position:absolute;
+ position:absolute;
 width:100%;
 height:100%;
 display:flex;
@@ -299,10 +298,14 @@ photo.style.display="block";
 photo.classList.add("fadeIn");
 
 photo.classList.add("glow");
-
 let msg=`🌸 Buddi 🌸
-
-Ethoo therinjo theriyamayo namba pesi frds ah agitom😌...but tq vu presence la neraiya help pannuchu ellam visiyathukum.Then epavum feel pannatha enimel achu happy ah eru vu life ah enjoy pannu ethana na vanthu share pannu enna da ivan namba frd ah patho ivan love feelings ooda nambala pakuran pesurathu crt ta share pandrathu crt ta thappanu yosikatha thonuchina open ah pesu enna thonutho.Then epavachu uncomfortable ah feel achina sollitu pesama po evlo days ku ipad erupom therla enaku therinju na eruppen nee strong ah illa epo venalum change avanganu soldra athu crt tha vu point of view la...Na mathavanga mari erupanu nenaikatha...sery na romba pesa virumbala innum neraiya sollanum thonuthu nee ipavey sirichinu thana erukka buddi...👀Anyway ellathukum nandri...;
+Ethoo therinjo theriyamayo namba pesi frds ah agitom😌.
+But tq vu presence la neraiya help pannuchu ellam visiyathukum.
+Then epavum feel pannatha enimel achu happy ah eru vu life ah enjoy pannu ethana na vanthu share pannu.
+Enna da ivan namba frd ah patho ivan love feelings ooda nambala pakuran pesurathu crt ta share pandrathu crt ta thappanu yosikatha thonuchina open ah pesu enna thonutho.
+Then epavachu uncomfortable ah feel achina sollitu pesama po evlo days ku ipad erupom therla enaku therinju na eruppen nee strong ah illa epo venalum change avanganu soldra athu crt tha vu point of view la.
+Na mathavanga mari erupanu nenaikatha...sery na romba pesa virumbala innum neraiya sollanum thonuthu nee ipavey sirichinu thana erukka buddi.
+👀Anyway ellathukum nandri.
 
 Thank you for always being kind,
 caring and wonderful. 😊
@@ -316,15 +319,10 @@ is only to make you smile. 💖
 Have a beautiful day! 🌷`;
 
 let k=0;
-
 document.getElementById("final").innerHTML="";
-
 function typing(){
-
-if(k<msg.length){
-
+if(k<=msg.length){
 document.getElementById("final").innerHTML+=msg.charAt(k);
-
 k++;
 
 setTimeout(typing,35);
