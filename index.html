@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surprise For Priya 🌸</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+background:linear-gradient(135deg,#ff9fc7,#ffd8ea);
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.page{
+position:absolute;
+width:100%;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+transition:.8s;
+}
+
+.hide{
+opacity:0;
+pointer-events:none;
+}
+
+h1{
+font-size:40px;
+color:#fff;
+margin-bottom:20px;
+}
+
+#text{
+font-size:22px;
+color:white;
+line-height:1.8;
+white-space:pre-line;
+max-width:360px;
+}
+
+button{
+margin-top:25px;
+padding:15px 35px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:#ff4f8b;
+color:white;
+cursor:pointer;
+}
+
+.gift{
+font-size:120px;
+cursor:pointer;
+animation:jump 1s infinite;
+}
+
+@keyframes jump{
+50%{
+transform:translateY(-10px);
+}
+}
+
+img{
+width:280px;
+height:280px;
+border-radius:25px;
+object-fit:cover;
+display:none;
+}
+
+.heart{
+position:absolute;
+font-size:24px;
+animation:fly 8s linear infinite;
+}
+
+@keyframes fly{
+
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+
+100%{
+transform:translateY(-120px);
+opacity:1;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="page1" class="page">
+
+<h1>Hey Priya 🌸</h1>
+
+<div id="text"></div>
+
+<button onclick="nextPage()">Continue ➜</button>
+
+</div>
+
+<div id="page2" class="page hide">
+
+<h1>One Last Surprise 🎁</h1>
+
+<p style="color:white;font-size:22px;">
+Tap the Gift 🎁
+</p>
+
+<div class="gift" onclick="openGift()">🎁</div>
+
+</div>
+
+<div id="page3" class="page hide">
+
+<img id="photo" src="priya.jpg">
+
+<h1>🌸 Surprise 🌸</h1>
+
+<p id="final"></p>
+
+</div>
+<script>
+
+let message=`Sometimes the smallest surprises bring the biggest smiles. 😊
+
+Life is beautiful when we have good friends or anything😉😜...
+
+Your smile is truly special. 🌸
+
+One last surprise is waiting for you... 🎁`;
+
+let i=0;
+
+function typeWriter(){
+
+if(i<message.length){
+
+document.getElementById("text").innerHTML+=message.charAt(i);
+
+i++;
+
+setTimeout(typeWriter,40);
+
+}
+
+}
+
+typeWriter();
+
+function nextPage(){
+
+document.getElementById("page1").classList.add("hide");
+
+document.getElementById("page2").classList.remove("hide");
+
+}
+
+setInterval(()=>{
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML=Math.random()>0.5?"💖":"🌸";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.fontSize=(20+Math.random()*20)+"px";
+
+document.body.appendChild(h);
+
+setTimeout(()=>{
+
+h.remove();
+
+},8000);
+
+},300);
+
+function confetti(){
+
+for(let i=0;i<70;i++){
+
+let c=document.createElement("div");
+
+c.innerHTML=["🎉","✨","💖","🌸"][Math.floor(Math.random()*4)];
+
+c.style.position="absolute";
+
+c.style.left=Math.random()*100+"vw";
+
+c.style.top="-30px";
+
+c.style.fontSize=(20+Math.random()*20)+"px";
+
+c.style.transition="4s linear";
+
+document.body.appendChild(c);
+
+setTimeout(()=>{
+
+c.style.top="100vh";
+
+},100);
+
+setTimeout(()=>{
+
+c.remove();
+
+},4500);
+
+}
+
+}
+
+</script>
+<style>
+.fadeIn{
+animation:fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:scale(.7);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+.glow{
+animation:glow 1.5s infinite alternate;
+}
+
+@keyframes glow{
+from{
+box-shadow:0 0 10px #fff;
+}
+to{
+box-shadow:0 0 35px #ff4f8b;
+}
+}
+
+#photo{
+display:none;
+border-radius:25px;
+width:280px;
+height:280px;
+object-fit:cover;
+}
+
+#final{
+padding:20px;
+font-size:22px;
+line-height:1.8;
+color:white;
+max-width:360px;
+}
+</style>
+
+<script>
+
+// openGift() function replace pannu
+
+function openGift(){
+
+document.getElementById("page2").classList.add("hide");
+
+document.getElementById("page3").classList.remove("hide");
+
+let photo=document.getElementById("photo");
+
+photo.style.display="block";
+
+photo.classList.add("fadeIn");
+
+photo.classList.add("glow");
+
+let msg=`🌸 Buddi 🌸
+
+Ethoo therinjo theriyamayo namba pesi frds ah agitom😌...but tq vu presence la neraiya help pannuchu ellam visiyathukum.Then epavum feel pannatha enimel achu happy ah eru vu life ah enjoy pannu ethana na vanthu share pannu enna da ivan namba frd ah patho ivan love feelings ooda nambala pakuran pesurathu crt ta share pandrathu crt ta thappanu yosikatha thonuchina open ah pesu enna thonutho.Then epavachu uncomfortable ah feel achina sollitu pesama po evlo days ku ipad erupom therla enaku therinju na eruppen nee strong ah illa epo venalum change avanganu soldra athu crt tha vu point of view la...Na mathavanga mari erupanu nenaikatha...sery na romba pesa virumbala innum neraiya sollanum thonuthu nee ipavey sirichinu thana erukka buddi...👀Anyway ellathukum nandri...;
+
+Thank you for always being kind,
+caring and wonderful. 😊
+
+May your smile always shine
+as brightly as today. ✨
+
+This little surprise
+is only to make you smile. 💖
+
+Have a beautiful day! 🌷`;
+
+let k=0;
+
+document.getElementById("final").innerHTML="";
+
+function typing(){
+
+if(k<msg.length){
+
+document.getElementById("final").innerHTML+=msg.charAt(k);
+
+k++;
+
+setTimeout(typing,35);
+
+}
+
+}
+
+typing();
+
+confetti();
+
+}
+
+</script>
